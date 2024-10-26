@@ -30,7 +30,6 @@
 
 # Executables
 *.exe
-*.out
 *.app
 *.i*86
 *.x86_64
@@ -41,6 +40,11 @@
 *.su
 *.idb
 *.pdb
+*.lst
+*.dbgconf
+MDK-ARM/pellet_dispenser_CM7_320x240_CM4
+MDK-ARM/pellet_dispenser_CM7_320x240_CM7
+TouchGFX/build/
 
 # Kernel Module Compile Results
 *.mod*
@@ -50,3 +54,26 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Other directories
+MDK-ARM/RTE
+Drivers/CMSIS
+Middlewares/ST/touchgfx/framework/include/platform/hal
+Middlewares/ST/touchgfx/framework/source/platform/hal
+**/simulator/
+**/cache/
+.vscode
+
+# Other Files
+*.htm
+*.cache
+*.rb
+*.md
+*.xml
+*.xsd
+*.temp
+*.uvguix*
+*.uvoptx
+*.uvprojx
+*.config
+*.scvd
