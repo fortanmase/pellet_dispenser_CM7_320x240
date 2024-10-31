@@ -65,8 +65,6 @@ Drivers/CMSIS
 *.cache
 *.rb
 *.md
-*.xml
-*.xsd
 *.temp
 *.uvguix*
 *.uvoptx

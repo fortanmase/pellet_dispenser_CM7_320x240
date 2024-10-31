@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.22.1">
+  <Languages>
+    <Language Id="GB" />
+  </Languages>
+  <Texts>
+    <TextGroup Id="Group1" />
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_HK8T" Alignment="Left" TypographyId="settingsTypo">
+        <Translation Language="GB">1.5</Translation>
+      </Text>
+      <Text Id="__SingleUse_2HSR" Alignment="Left" TypographyId="settingsTypo">
+        <Translation Language="GB">x&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_X3HV" Alignment="Left" TypographyId="settingsTypo">
+        <Translation Language="GB">100</Translation>
+      </Text>
+      <Text Id="__SingleUse_G92Q" Alignment="Left" TypographyId="settingsTypo">
+        <Translation Language="GB">100</Translation>
+      </Text>
+      <Text Id="__SingleUse_JOOO" Alignment="Left" TypographyId="settingsTypo">
+        <Translation Language="GB">5</Translation>
+      </Text>
+      <Text Id="__SingleUse_23F4" Alignment="Left" TypographyId="settingsTypo">
+        <Translation Language="GB">&lt;value&gt;s</Translation>
+      </Text>
+      <Text Id="__SingleUse_2Z7F" Alignment="Left" TypographyId="settingsTypo">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_0J8R" Alignment="Left" TypographyId="settingsTypo">
+        <Translation Language="GB">Speed</Translation>
+      </Text>
+      <Text Id="__SingleUse_YSS6" Alignment="Left" TypographyId="settingsTypoSmall">
+        <Translation Language="GB">Select Alert...</Translation>
+      </Text>
+      <Text Id="screenTimeout" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">100</Translation>
+      </Text>
+      <Text Id="__SingleUse_GLUJ" Alignment="Left" TypographyId="settingsTypo">
+        <Translation Language="GB">&lt;value&gt; min</Translation>
+      </Text>
+      <Text Id="__SingleUse_X150" Alignment="Left" TypographyId="settingsTypo">
+        <Translation Language="GB">Interval</Translation>
+      </Text>
+      <Text Id="__SingleUse_TPUD" Alignment="Left" TypographyId="settingsTypo">
+        <Translation Language="GB">Quantity</Translation>
+      </Text>
+      <Text Id="__SingleUse_NJZQ" Alignment="Left" TypographyId="settingsTypo">
+        <Translation Language="GB">Test Sound</Translation>
+      </Text>
+      <Text Id="__SingleUse_IDP2" Alignment="Left" TypographyId="settingsTypo">
+        <Translation Language="GB">Enable Alerts</Translation>
+      </Text>
+      <Text Id="__SingleUse_Q08R" Alignment="Left" TypographyId="settingsTypo">
+        <Translation Language="GB">Mute</Translation>
+      </Text>
+      <Text Id="__SingleUse_RFA7" Alignment="Left" TypographyId="settingsTypo">
+        <Translation Language="GB">Volume</Translation>
+      </Text>
+      <Text Id="__SingleUse_B0VH" Alignment="Left" TypographyId="settingsTypo">
+        <Translation Language="GB">Auto Brightness</Translation>
+      </Text>
+      <Text Id="__SingleUse_APBT" Alignment="Left" TypographyId="settingsTypo">
+        <Translation Language="GB">Screen Timeout</Translation>
+      </Text>
+      <Text Id="__SingleUse_OMID" Alignment="Left" TypographyId="settingsTypo">
+        <Translation Language="GB">Brightness</Translation>
+      </Text>
+      <Text Id="__SingleUse_YSQN" Alignment="Left" TypographyId="settingsTypo">
+        <Translation Language="GB">Dark Theme</Translation>
+      </Text>
+      <Text Id="__SingleUse_FIGF" Alignment="Left" TypographyId="Headers">
+        <Translation Language="GB">Information</Translation>
+      </Text>
+      <Text Id="__SingleUse_BDDZ" Alignment="Left" TypographyId="Headers">
+        <Translation Language="GB">Dispenser</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZQDP" Alignment="Left" TypographyId="Headers">
+        <Translation Language="GB">Sound</Translation>
+      </Text>
+      <Text Id="__SingleUse_OLSB" Alignment="Left" TypographyId="Headers">
+        <Translation Language="GB">Display</Translation>
+      </Text>
+      <Text Id="__SingleUse_PMMS" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Here is an example of an&#10;info section for the Pellet&#10;Dispenser.&#10;Welcome to our pellet&#10;dispenser! This device is&#10;designed to efficiently&#10;and accurately dispense&#10;pellets for your&#10;convenience.&#10;To use the pellet&#10;dispenser, simply fill the&#10;hopper with the desired&#10;amount of pellets, and set&#10;the dispensing rate using&#10;the controls. The&#10;dispenser will then&#10;dispense pellets&#10;according to your settings.&#10;Please note that the&#10;pellet dispenser is not&#10;suitable for use with&#10;flammable materials, and&#10;should not be used for&#10;any purpose other than its&#10;intended use.&#10;For optimal performance,&#10;we recommend cleaning&#10;the hopper and dispenser&#10;mechanism regularly.&#10;Refer to the user manual&#10;for specific instructions&#10;on how to do this.&#10;If you have any questions&#10;or concerns about your&#10;pellet dispenser, please&#10;do not hesitate to contact&#10;our customer support&#10;team. We are here to help&#10;and ensure that you get&#10;the most out of your&#10;pellet dispenser.</Translation>
+      </Text>
+      <Text Id="dispensSettID" Alignment="Left" TypographyId="settingsTypo">
+        <Translation Language="GB">Dispenser Settings</Translation>
+      </Text>
+      <Text Id="dispRdyID" Alignment="Left" TypographyId="mainTypo">
+        <Translation Language="GB">Dispenser Ready</Translation>
+      </Text>
+      <Text Id="soundSettID" Alignment="Left" TypographyId="settingsTypo">
+        <Translation Language="GB">Sound Settings</Translation>
+      </Text>
+      <Text Id="dispSettID" Alignment="Left" TypographyId="settingsTypo">
+        <Translation Language="GB">Display Settings</Translation>
+      </Text>
+      <Text Id="dispensedPellets" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">1000</Translation>
+      </Text>
+      <Text Id="dispPellID" Alignment="Left" TypographyId="mainTypo">
+        <Translation Language="GB">Dispensed - &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="numPellets" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">10</Translation>
+      </Text>
+      <Text Id="dispDispeID" Alignment="Left" TypographyId="mainTypo">
+        <Translation Language="GB">Dispensing &lt;value&gt; pellets</Translation>
+      </Text>
+      <Text Id="dispEmtyID" Alignment="Left" TypographyId="mainTypo">
+        <Translation Language="GB">Dispenser Empty</Translation>
+      </Text>
+      <Text Id="dispStallID" Alignment="Left" TypographyId="mainTypo">
+        <Translation Language="GB">Dispenser Stalled</Translation>
+      </Text>
+      <Text Id="__SingleUse_36MR" Alignment="Center" TypographyId="Clock">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
+      <Text Id="infoHeadID" Alignment="Left" TypographyId="Headers">
+        <Translation Language="GB">Information</Translation>
+      </Text>
+      <Text Id="dispHeadID" Alignment="Left" TypographyId="Headers">
+        <Translation Language="GB">Dispenser</Translation>
+      </Text>
+      <Text Id="settHeadID" Alignment="Left" TypographyId="Headers">
+        <Translation Language="GB">Settings</Translation>
+      </Text>
+    </TextGroup>
+  </Texts>
+  <Typographies>
+    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
+    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
+    <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
+    <Typography Id="Headers" Font="TCBI____.TTF" Size="30" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
+    <Typography Id="Clock" Font="TCBI____.TTF" Size="26" Bpp="4" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="0123456789 :APM" WildcardCharacterRanges="0-9" />
+    <Typography Id="mainTypo" Font="TCBI____.TTF" Size="28" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
+    <Typography Id="settingsTypo" Font="TCMI____.TTF" Size="26" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
+    <Typography Id="settingsTypoSmall" Font="TCMI____.TTF" Size="20" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+  </Typographies>
+</TextDatabase>
