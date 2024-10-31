@@ -68,3 +68,5 @@ Drivers/CMSIS
 *.uvoptx
 *.config
 *.scvd
+*.mk
+*.props
