@@ -17,8 +17,6 @@
 *.pch
 
 # Libraries
-*.lib
-*.a
 *.la
 *.lo
 
@@ -58,8 +56,6 @@ dkms.conf
 # Other directories
 MDK-ARM/RTE
 Drivers/CMSIS
-Middlewares/ST/touchgfx/framework/include/platform/hal
-Middlewares/ST/touchgfx/framework/source/platform/hal
 **/simulator/
 **/cache/
 .vscode
