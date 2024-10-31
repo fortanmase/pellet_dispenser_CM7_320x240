@@ -63,9 +63,7 @@ Drivers/CMSIS
 # Other Files
 *.htm
 *.cache
-
 *.md
-*.temp
 *.uvguix*
 *.uvoptx
 *.config
