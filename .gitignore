@@ -63,7 +63,7 @@ Drivers/CMSIS
 # Other Files
 *.htm
 *.cache
-*.rb
+
 *.md
 *.temp
 *.uvguix*
