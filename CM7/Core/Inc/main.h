@@ -96,13 +96,13 @@ void Error_Handler(void);
 #define USB_OTG_FS_OVCR_Pin GPIO_PIN_7
 #define USB_OTG_FS_OVCR_GPIO_Port GPIOG
 #define USB_OTG_FS_OVCR_EXTI_IRQn EXTI9_5_IRQn
+#define CTP_IRQ_Pin GPIO_PIN_6
+#define CTP_IRQ_GPIO_Port GPIOC
+#define CTP_IRQ_EXTI_IRQn EXTI9_5_IRQn
 #define TFT_DC_Pin GPIO_PIN_7
 #define TFT_DC_GPIO_Port GPIOC
 #define CTP_RST_Pin GPIO_PIN_8
 #define CTP_RST_GPIO_Port GPIOC
-#define CTP_IRQ_Pin GPIO_PIN_9
-#define CTP_IRQ_GPIO_Port GPIOC
-#define CTP_IRQ_EXTI_IRQn EXTI9_5_IRQn
 #define TFT_CS_Pin GPIO_PIN_6
 #define TFT_CS_GPIO_Port GPIOB
 #define CTP_SCL_Pin GPIO_PIN_8

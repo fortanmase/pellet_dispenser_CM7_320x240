@@ -412,7 +412,7 @@ static void MX_TIM2_Init(void)
   htim2.Instance = TIM2;
   htim2.Init.Prescaler = 100-1;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 5000-1;
+  htim2.Init.Period = 20000-1;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
@@ -556,19 +556,16 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOE_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, LED_GREEN_Pin|TFT_RST_Pin|LED_RED_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, LED_GREEN_Pin|LED_RED_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, TFT_RST_Pin|TFT_CS_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(USB_OTG_FS_PWR_EN_GPIO_Port, USB_OTG_FS_PWR_EN_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(TFT_DC_GPIO_Port, TFT_DC_Pin, GPIO_PIN_SET);
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(CTP_RST_GPIO_Port, CTP_RST_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(TFT_CS_GPIO_Port, TFT_CS_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOC, TFT_DC_Pin|CTP_RST_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_RESET);
@@ -579,12 +576,19 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(USER_BUTTON_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : LED_GREEN_Pin TFT_RST_Pin LED_RED_Pin */
-  GPIO_InitStruct.Pin = LED_GREEN_Pin|TFT_RST_Pin|LED_RED_Pin;
+  /*Configure GPIO pins : LED_GREEN_Pin LED_RED_Pin */
+  GPIO_InitStruct.Pin = LED_GREEN_Pin|LED_RED_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : TFT_RST_Pin */
+  GPIO_InitStruct.Pin = TFT_RST_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(TFT_RST_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : USB_OTG_FS_PWR_EN_Pin */
   GPIO_InitStruct.Pin = USB_OTG_FS_PWR_EN_Pin;
@@ -599,6 +603,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(USB_OTG_FS_OVCR_GPIO_Port, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : CTP_IRQ_Pin */
+  GPIO_InitStruct.Pin = CTP_IRQ_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(CTP_IRQ_GPIO_Port, &GPIO_InitStruct);
+
   /*Configure GPIO pin : TFT_DC_Pin */
   GPIO_InitStruct.Pin = TFT_DC_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -609,15 +619,9 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin : CTP_RST_Pin */
   GPIO_InitStruct.Pin = CTP_RST_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(CTP_RST_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : CTP_IRQ_Pin */
-  GPIO_InitStruct.Pin = CTP_IRQ_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
-  GPIO_InitStruct.Pull = GPIO_PULLUP;
-  HAL_GPIO_Init(CTP_IRQ_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : TFT_CS_Pin */
   GPIO_InitStruct.Pin = TFT_CS_Pin;
@@ -634,7 +638,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(LED_YELLOW_GPIO_Port, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 14, 0);
+  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 15, 0);
   HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */

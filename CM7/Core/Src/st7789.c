@@ -76,7 +76,6 @@ void ST7789_Init(void)
 
 void ST7789_DrawBitmap(uint8_t *bitmap, uint16_t x, uint16_t y, uint16_t w, uint16_t h)
 {
-    DWT_ResetCyccnt();
     ST7789_SPI_HDLR.Init.DataSize = SPI_DATASIZE_8BIT; /* Set data size back to 8 bit after DMA transmission*/
     HAL_SPI_Init(&ST7789_SPI_HDLR);
     csHigh();
@@ -92,8 +91,6 @@ void ST7789_DrawBitmap(uint8_t *bitmap, uint16_t x, uint16_t y, uint16_t w, uint
     HAL_SPI_Init(&ST7789_SPI_HDLR);
 
     HAL_StatusTypeDef dma_err = HAL_SPI_Transmit_DMA(&ST7789_SPI_HDLR, (uint8_t *)bitmap, w * h);
-    uint32_t usElapsed = DWT_GetElapsedUs();
-    usElapsed++;
 }
 
 /**
