@@ -4,6 +4,8 @@
 #include <gui_generated/main_screen/MainViewBase.hpp>
 #include <gui/main_screen/MainPresenter.hpp>
 
+#include <map>
+
 class MainView : public MainViewBase
 {
 public:
@@ -12,6 +14,17 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
     virtual void handleTickEvent();
+
+private:
+    struct TextureScaleData
+    {
+        float textureScale = 1.0F;
+        float textureScaleFactor = -0.005F;
+    };
+    std::map<TextureMapper *, TextureScaleData> textureScales;
+    static constexpr float FLOAT_EPSILON = 0.005F;
+    static constexpr float MAX_SCALE = 1.0F;
+    static constexpr float MIN_SCALE = 0.8F;
 
 protected:
     void updateDisplayState();
@@ -23,6 +36,7 @@ protected:
     void updateDispenserSettingsScreen();
     void updateInfoScreen();
     void containerVisibilityOff();
+    void updateTextureScale(TextureMapper &texture);
     virtual void settingsButtonPressed();
     virtual void infoButtonPressed();
     virtual void backButtonPressed();

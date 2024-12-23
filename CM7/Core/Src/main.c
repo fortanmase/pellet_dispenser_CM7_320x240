@@ -531,7 +531,7 @@ static void MX_DMA_Init(void)
 
   /* DMA interrupt init */
   /* DMA1_Stream0_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Stream0_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(DMA1_Stream0_IRQn, 2, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream0_IRQn);
 
 }
@@ -700,14 +700,7 @@ uint32_t DWT_GetElapsedUs(void)
   uint32_t currCyccnt = DWT->CYCCNT;
   uint32_t elapsedCycles;
 
-  if (currCyccnt >= dwtPrevCyccnt)
-  {
-    elapsedCycles = currCyccnt - dwtPrevCyccnt; /* No wrap-around, calculate elapsed cycles normally */
-  }
-  else
-  {
-    elapsedCycles = (UINT32_MAX - dwtPrevCyccnt) + currCyccnt + 1UL; /* Calculate elapsed cycles accounting for wrap-around */
-  }
+  elapsedCycles = currCyccnt - dwtPrevCyccnt; /* No wrap-around, calculate elapsed cycles normally */
 
   dwtElapsedUsOffset += (elapsedCycles / (HAL_RCC_GetHCLKFreq() / 1000000UL)); /* Update elapsed time offset */
 

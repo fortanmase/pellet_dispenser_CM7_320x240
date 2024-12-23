@@ -2,6 +2,7 @@
 
 #include "cst328.h"
 #include "config.h"
+#include "main.h"
 
 #define CST328_I2C_HDLR hi2c1 /**< CST328 I2C Handler */
 
@@ -43,6 +44,8 @@ static void transformCoordinates(uint16_t raw_x, uint16_t raw_y, uint16_t *trans
 static HAL_StatusTypeDef writeRegister(uint16_t regAddr, uint8_t *regData, uint16_t size);
 static HAL_StatusTypeDef readRegister(uint16_t regAddr, uint8_t *regData, uint16_t size);
 
+static inline void hardReset(void);
+
 extern I2C_HandleTypeDef CST328_I2C_HDLR;         /**< I2C handler */
 static CST328_TouchType touchData;                /**< Touch data */
 static DisplayRotationType rotation = ROTATION_0; /**< Display rotation */
@@ -53,6 +56,10 @@ bool CST328_Init(void)
     uint8_t readBuffer[4];
     bool flag = false;
     bool ret = false;
+
+    hardReset(); /* Perform hard reset */
+
+    HAL_Delay(200U); /* Wait 200ms chip init time (from datasheet)*/
 
     HAL_StatusTypeDef status = writeRegister(CST328_CMD_ENUM_MODE_DEBUG_INFO, NULL, 0u); /* Put the touch controller into debug info mode */
     status |= readRegister(CST328_REG_FW_VER_CODE_AND_BOOT_TIME, readBuffer, sizeof(readBuffer));
@@ -232,4 +239,14 @@ static void transformCoordinates(uint16_t raw_x, uint16_t raw_y, uint16_t *trans
         *transformed_y = GUI_WIDTH - raw_y;
         break;
     }
+}
+
+/**
+ * @brief   Performs a hard reset
+ */
+static inline void hardReset(void)
+{
+    HAL_GPIO_WritePin(CTP_RST_GPIO_Port, CTP_RST_Pin, GPIO_PIN_RESET);
+    HAL_Delay(1U);
+    HAL_GPIO_WritePin(CTP_RST_GPIO_Port, CTP_RST_Pin, GPIO_PIN_SET);
 }

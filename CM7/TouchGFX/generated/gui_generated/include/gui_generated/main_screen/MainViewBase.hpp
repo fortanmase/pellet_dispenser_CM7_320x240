@@ -17,6 +17,7 @@
 #include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/containers/Slider.hpp>
 #include <touchgfx/widgets/ButtonWithIcon.hpp>
+#include <touchgfx/widgets/TextureMapper.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/containers/clock/DigitalClock.hpp>
@@ -170,16 +171,16 @@ protected:
     touchgfx::TextAreaWithOneWildcard dispensedPellets;
     touchgfx::Container dispensingContainer;
     touchgfx::TextAreaWithOneWildcard dispenserDispensing;
-    touchgfx::Image statusDispensing;
+    touchgfx::TextureMapper dispenseInProgressTexture;
     touchgfx::Container stalledContainer;
     touchgfx::TextArea dispenserStalledText;
-    touchgfx::Image statusStalled;
+    touchgfx::TextureMapper statusStalledTexture;
     touchgfx::Container emptyContainer;
     touchgfx::TextArea dispenserEmptyText;
-    touchgfx::Image statusEmpty;
+    touchgfx::TextureMapper statusEmptyTexture;
     touchgfx::Container readyContainer;
     touchgfx::TextArea dispenserReadyText;
-    touchgfx::Image statusReady;
+    touchgfx::TextureMapper statusReadyTexture;
     touchgfx::Container headerContainer;
     touchgfx::Line headerLine;
     touchgfx::PainterRGB565 headerLinePainter;

@@ -318,7 +318,6 @@ MainViewBase::MainViewBase() :
     add(functionContainer);
 
     mainContainer.setPosition(0, 0, 320, 240);
-    mainContainer.setVisible(false);
     manualDispenseButton.setXY(195, 179);
     manualDispenseButton.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_RELEASED_110X50_ID), touchgfx::Bitmap(BITMAP_BUTTON_PRESSED_110X50_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_PAN_TOOL_45_45_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_PAN_TOOL_45_45_E8F6FB_SVG_ID));
     manualDispenseButton.setIconXY(30, 1);
@@ -355,6 +354,7 @@ MainViewBase::MainViewBase() :
     statusContainer.add(dispensedContainer);
 
     dispensingContainer.setPosition(0, 0, 320, 55);
+    dispensingContainer.setVisible(false);
     dispenserDispensing.setPosition(5, 11, 255, 33);
     dispenserDispensing.setColor(touchgfx::Color::getColorFromRGB(0, 73, 144));
     dispenserDispensing.setLinespacing(0);
@@ -362,23 +362,40 @@ MainViewBase::MainViewBase() :
     dispenserDispensing.setTypedText(touchgfx::TypedText(T_DISPDISPEID));
     dispensingContainer.add(dispenserDispensing);
 
-    statusDispensing.setXY(261, 3);
-    statusDispensing.setBitmap(touchgfx::Bitmap(BITMAP_LOADING_48X48_ID));
-    dispensingContainer.add(statusDispensing);
+    dispenseInProgressTexture.setXY(261, 3);
+    dispenseInProgressTexture.setBitmap(touchgfx::Bitmap(BITMAP_LOADING_48X48_ID));
+    dispenseInProgressTexture.setWidth(48);
+    dispenseInProgressTexture.setHeight(48);
+    dispenseInProgressTexture.setBitmapPosition(0.0f, 0.0f);
+    dispenseInProgressTexture.setScale(1.0f);
+    dispenseInProgressTexture.setCameraDistance(1000.0f);
+    dispenseInProgressTexture.setOrigo(24.0f, 24.0f, 1000.0f);
+    dispenseInProgressTexture.setCamera(24.0f, 24.0f);
+    dispenseInProgressTexture.setAngles(0.0f, 0.0f, 0.0f);
+    dispenseInProgressTexture.setRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
+    dispensingContainer.add(dispenseInProgressTexture);
 
     statusContainer.add(dispensingContainer);
 
     stalledContainer.setPosition(0, 0, 320, 55);
-    stalledContainer.setVisible(false);
     dispenserStalledText.setPosition(5, 11, 182, 33);
     dispenserStalledText.setColor(touchgfx::Color::getColorFromRGB(0, 73, 144));
     dispenserStalledText.setLinespacing(0);
     dispenserStalledText.setTypedText(touchgfx::TypedText(T_DISPSTALLID));
     stalledContainer.add(dispenserStalledText);
 
-    statusStalled.setXY(261, 3);
-    statusStalled.setBitmap(touchgfx::Bitmap(BITMAP_FAILURE_48X48_ID));
-    stalledContainer.add(statusStalled);
+    statusStalledTexture.setXY(261, 3);
+    statusStalledTexture.setBitmap(touchgfx::Bitmap(BITMAP_FAILURE_48X48_ID));
+    statusStalledTexture.setWidth(48);
+    statusStalledTexture.setHeight(48);
+    statusStalledTexture.setBitmapPosition(0.0f, 0.0f);
+    statusStalledTexture.setScale(1.0f);
+    statusStalledTexture.setCameraDistance(1000.0f);
+    statusStalledTexture.setOrigo(24.0f, 24.0f, 1000.0f);
+    statusStalledTexture.setCamera(24.0f, 24.0f);
+    statusStalledTexture.setAngles(0.0f, 0.0f, 0.0f);
+    statusStalledTexture.setRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
+    stalledContainer.add(statusStalledTexture);
 
     statusContainer.add(stalledContainer);
 
@@ -390,9 +407,18 @@ MainViewBase::MainViewBase() :
     dispenserEmptyText.setTypedText(touchgfx::TypedText(T_DISPEMTYID));
     emptyContainer.add(dispenserEmptyText);
 
-    statusEmpty.setXY(261, 3);
-    statusEmpty.setBitmap(touchgfx::Bitmap(BITMAP_WARNING_48X48_ID));
-    emptyContainer.add(statusEmpty);
+    statusEmptyTexture.setXY(261, 3);
+    statusEmptyTexture.setBitmap(touchgfx::Bitmap(BITMAP_WARNING_48X48_ID));
+    statusEmptyTexture.setWidth(48);
+    statusEmptyTexture.setHeight(48);
+    statusEmptyTexture.setBitmapPosition(0.0f, 0.0f);
+    statusEmptyTexture.setScale(1.0f);
+    statusEmptyTexture.setCameraDistance(1000.0f);
+    statusEmptyTexture.setOrigo(24.0f, 24.0f, 1000.0f);
+    statusEmptyTexture.setCamera(24.0f, 24.0f);
+    statusEmptyTexture.setAngles(0.0f, 0.0f, 0.0f);
+    statusEmptyTexture.setRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
+    emptyContainer.add(statusEmptyTexture);
 
     statusContainer.add(emptyContainer);
 
@@ -404,9 +430,18 @@ MainViewBase::MainViewBase() :
     dispenserReadyText.setTypedText(touchgfx::TypedText(T_DISPRDYID));
     readyContainer.add(dispenserReadyText);
 
-    statusReady.setXY(261, 3);
-    statusReady.setBitmap(touchgfx::Bitmap(BITMAP_READY_48X48_ID));
-    readyContainer.add(statusReady);
+    statusReadyTexture.setXY(261, 3);
+    statusReadyTexture.setBitmap(touchgfx::Bitmap(BITMAP_READY_48X48_ID));
+    statusReadyTexture.setWidth(48);
+    statusReadyTexture.setHeight(48);
+    statusReadyTexture.setBitmapPosition(0.0f, 0.0f);
+    statusReadyTexture.setScale(1.0f);
+    statusReadyTexture.setCameraDistance(1000.0f);
+    statusReadyTexture.setOrigo(24.0f, 24.0f, 1000.0f);
+    statusReadyTexture.setCamera(24.0f, 24.0f);
+    statusReadyTexture.setAngles(0.0f, 0.0f, 0.0f);
+    statusReadyTexture.setRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
+    readyContainer.add(statusReadyTexture);
 
     statusContainer.add(readyContainer);
 
@@ -415,7 +450,6 @@ MainViewBase::MainViewBase() :
     add(mainContainer);
 
     headerContainer.setPosition(0, 0, 320, 240);
-    headerContainer.setVisible(false);
     headerLine.setPosition(0, 35, 320, 10);
     headerLinePainter.setColor(touchgfx::Color::getColorFromRGB(0, 73, 144));
     headerLine.setPainter(headerLinePainter);
@@ -436,6 +470,7 @@ MainViewBase::MainViewBase() :
     add(headerContainer);
 
     startupContainer.setPosition(0, 0, 320, 240);
+    startupContainer.setVisible(false);
     metrisLogo.setXY(0, 42);
     metrisLogo.setBitmap(touchgfx::Bitmap(BITMAP_METRIS_LOGO_ID));
     startupContainer.add(metrisLogo);

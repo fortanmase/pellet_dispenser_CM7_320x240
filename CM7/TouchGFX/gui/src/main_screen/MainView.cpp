@@ -1,5 +1,6 @@
 #include <gui/main_screen/MainView.hpp>
 #include <touchgfx/Color.hpp>
+#include "main.h"
 
 typedef enum
 {
@@ -38,6 +39,22 @@ void MainView::tearDownScreen()
 
 void MainView::handleTickEvent()
 {
+    if (displaySettingsButton.getPressedState())
+    {
+        displaySettingsText.invalidate();
+    }
+    if (screenState == MAIN_SCREEN)
+    {
+        // static float zAngle = 0.0F;
+        // zAngle += 0.100F;
+        // dispenseInProgressTexture.updateAngles(0.0F, 0.0F, zAngle);
+
+        /*---------------------------*/
+
+        updateTextureScale(statusReadyTexture);
+        updateTextureScale(statusStalledTexture);
+        updateTextureScale(statusEmptyTexture);
+    }
     updateDisplayState();
 }
 
@@ -321,4 +338,21 @@ void MainView::containerVisibilityOff()
     displaySettingsContainer.setVisible(false);
     soundSettingsContainer.setVisible(false);
     dispenserSettingsContainer.setVisible(false);
+}
+
+void MainView::updateTextureScale(TextureMapper &texture)
+{
+    TextureScaleData &scaleData = textureScales[&texture];
+
+    if (fabs(scaleData.textureScale - MAX_SCALE) < FLOAT_EPSILON)
+    {
+        scaleData.textureScaleFactor = -0.005F;
+    }
+    else if (fabs(scaleData.textureScale - MIN_SCALE) < FLOAT_EPSILON)
+    {
+        scaleData.textureScaleFactor = 0.005F;
+    }
+
+    scaleData.textureScale += scaleData.textureScaleFactor;
+    texture.updateScale(scaleData.textureScale);
 }

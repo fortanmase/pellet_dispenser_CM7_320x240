@@ -45,7 +45,7 @@ extern "C" void touchgfxSignalVSync(void);
 
 // Block Allocator for Partial Framebuffer strategy
 static ManyBlockAllocator<12800, /* block size */
-                   2, /* number of blocks */
+                   4, /* number of blocks */
                    2  /* bytes per pixel */
                    > blockAllocator;
 

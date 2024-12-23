@@ -37,9 +37,6 @@ void STM32TouchController::init()
    */
 }
 
-uint16_t x_touch;
-uint16_t y_touch;
-bool retval = false;
 /**
  * By default sampleTouch returns false,
  * return true if a touch has been detected, otherwise false.
@@ -51,47 +48,61 @@ bool retval = false;
  *
  */
 
-uint32_t currentIrqCtr = 0U;
-uint32_t previousIrqCtr = 0U;
+#define VALID_X_MIN_COORD 1U
+#define VALID_Y_MIN_COORD 1U
+#define VALID_X_MAX_THD_COORD GUI_WIDTH - 1U
+#define VALID_Y_MAX_THD_COORD GUI_HEIGHT - 1U
+#define VALID_PRESSURE 10U
 
 bool STM32TouchController::sampleTouch(int32_t &x, int32_t &y)
 {
-  static uint32_t lastSampleTime = 0;
-  const uint32_t debounceTimeMs = 30U; /* Touch interrupt is being triggered at about 27ms interval if touchscreen pressed continuously, thus 30ms debounce should be fine */
+  static bool ret = false;
+  static uint32_t currentIrqCtr = 0U;
+  static uint32_t previousIrqCtr = 0U;
+  static uint16_t xCoord;
+  static uint16_t yCoord;
+  static uint8_t pressure;
 
   if (CST328_GetTouchPressed())
   {
-    uint8_t pressure;
-    uint32_t currentTime = HAL_GetTick();
 
-    if (currentTime - lastSampleTime >= debounceTimeMs)
+    currentIrqCtr = CST328_GetIrqCounter();
+
+    if (currentIrqCtr != previousIrqCtr)
     {
-      lastSampleTime = currentTime;
-      currentIrqCtr = CST328_GetIrqCounter();
+      previousIrqCtr = currentIrqCtr;
+      bool validTouch = CST328_GetTouchData(1U, &xCoord, &yCoord, &pressure);
 
-      if (currentIrqCtr != previousIrqCtr)
-      {
-        previousIrqCtr = currentIrqCtr;
-        bool validTouch = CST328_GetTouchData(1U, &x_touch, &y_touch, &pressure);
-      }
-      else
-      {
-        currentIrqCtr = 0U;
-        previousIrqCtr = 0U;
-        CST328_ResetTouchPressed();
-      }
+      /* clang-format off */
+      bool isValidTouch = validTouch                        &&
+                          (xCoord > VALID_X_MIN_COORD)      &&
+                          (yCoord > VALID_Y_MIN_COORD)      &&
+                          (xCoord < VALID_X_MAX_THD_COORD)  &&
+                          (yCoord < VALID_Y_MAX_THD_COORD)  &&
+                          (pressure > VALID_PRESSURE);
+      /* clang-format on */
+
+      ret = isValidTouch;
     }
-    retval = true;
+    else
+    {
+      currentIrqCtr = 0U;
+      previousIrqCtr = 0U;
+      CST328_ResetTouchPressed();
+    }
   }
   else
   {
-    retval = false;
+    ret = false;
   }
 
-  x = (int32_t)x_touch;
-  y = (int32_t)y_touch;
+  if (ret)
+  {
+    x = (int32_t)xCoord;
+    y = (int32_t)yCoord;
+  }
 
-  return retval;
+  return ret;
 }
 
 /* USER CODE END STM32TouchController */

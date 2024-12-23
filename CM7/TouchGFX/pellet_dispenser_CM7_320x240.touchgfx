@@ -99,7 +99,7 @@
                     "X": 214,
                     "Y": 160,
                     "Width": 47,
-                    "Height": 28,
+                    "Height": 31,
                     "TextId": "__SingleUse_2HSR",
                     "TextRotation": "0",
                     "Color": {
@@ -139,7 +139,7 @@
                     "X": 5,
                     "Y": 160,
                     "Width": 61,
-                    "Height": 28,
+                    "Height": 31,
                     "TextId": "__SingleUse_0J8R",
                     "TextRotation": "0",
                     "Color": {
@@ -174,7 +174,7 @@
                     "X": 233,
                     "Y": 105,
                     "Width": 23,
-                    "Height": 28,
+                    "Height": 31,
                     "TextId": "__SingleUse_23F4",
                     "TextRotation": "0",
                     "Color": {
@@ -194,7 +194,7 @@
                     "X": 2,
                     "Y": 105,
                     "Width": 76,
-                    "Height": 28,
+                    "Height": 31,
                     "TextId": "__SingleUse_X150",
                     "TextRotation": "0",
                     "Color": {
@@ -209,7 +209,7 @@
                     "X": 219,
                     "Y": 55,
                     "Width": 42,
-                    "Height": 28,
+                    "Height": 31,
                     "TextId": "__SingleUse_2Z7F",
                     "TextRotation": "0",
                     "Color": {
@@ -249,7 +249,7 @@
                     "X": 5,
                     "Y": 50,
                     "Width": 86,
-                    "Height": 28,
+                    "Height": 31,
                     "TextId": "__SingleUse_TPUD",
                     "TextRotation": "0",
                     "Color": {
@@ -298,7 +298,7 @@
                     "X": 5,
                     "Y": 170,
                     "Width": 104,
-                    "Height": 28,
+                    "Height": 31,
                     "TextId": "__SingleUse_NJZQ",
                     "TextRotation": "0",
                     "Color": {
@@ -349,7 +349,7 @@
                     "X": 5,
                     "Y": 130,
                     "Width": 130,
-                    "Height": 28,
+                    "Height": 31,
                     "TextId": "__SingleUse_IDP2",
                     "TextRotation": "0",
                     "Color": {
@@ -374,7 +374,7 @@
                     "X": 5,
                     "Y": 90,
                     "Width": 49,
-                    "Height": 28,
+                    "Height": 31,
                     "TextId": "__SingleUse_Q08R",
                     "TextRotation": "0",
                     "Color": {
@@ -406,7 +406,7 @@
                     "X": 5,
                     "Y": 50,
                     "Width": 72,
-                    "Height": 28,
+                    "Height": 31,
                     "TextId": "__SingleUse_RFA7",
                     "TextRotation": "0",
                     "Color": {
@@ -464,7 +464,7 @@
                     "X": 202,
                     "Y": 170,
                     "Width": 83,
-                    "Height": 28,
+                    "Height": 31,
                     "TextId": "__SingleUse_GLUJ",
                     "TextRotation": "0",
                     "Color": {
@@ -576,7 +576,7 @@
                     "Name": "displayHeaderText",
                     "X": 120,
                     "Width": 80,
-                    "Height": 33,
+                    "Height": 36,
                     "TextId": "__SingleUse_OLSB",
                     "TextRotation": "0",
                     "Color": {
@@ -630,7 +630,7 @@
                     "X": 87,
                     "Y": 86,
                     "Width": 146,
-                    "Height": 28,
+                    "Height": 31,
                     "TextId": "soundSettID",
                     "TextRotation": "0",
                     "Color": {
@@ -660,7 +660,7 @@
                     "X": 81,
                     "Y": 44,
                     "Width": 159,
-                    "Height": 28,
+                    "Height": 31,
                     "TextId": "dispSettID",
                     "TextRotation": "0",
                     "Color": {
@@ -689,7 +689,7 @@
                     "Name": "settingsHeaderText",
                     "X": 118,
                     "Width": 85,
-                    "Height": 33,
+                    "Height": 36,
                     "TextId": "settHeadID",
                     "TextRotation": "0",
                     "Color": {
@@ -707,7 +707,6 @@
             "Name": "mainContainer",
             "Width": 320,
             "Height": 240,
-            "Visible": false,
             "Components": [
               {
                 "Type": "ButtonWithIcon",
@@ -808,6 +807,7 @@
                     "Name": "dispensingContainer",
                     "Width": 320,
                     "Height": 55,
+                    "Visible": false,
                     "Components": [
                       {
                         "Type": "TextArea",
@@ -827,13 +827,21 @@
                         }
                       },
                       {
-                        "Type": "Image",
-                        "Name": "statusDispensing",
+                        "Type": "TextureMapper",
+                        "Name": "dispenseInProgressTexture",
                         "X": 261,
                         "Y": 3,
                         "Width": 48,
                         "Height": 48,
-                        "RelativeFilename": "loading_48x48.png"
+                        "RenderingAlgorithm": "Bilinear Interpolation",
+                        "FileNameImage": "loading_48x48.png",
+                        "LockBitmapToCenter": true,
+                        "Scale": 1.0,
+                        "LockOrigoToCenter": true,
+                        "XOrigo": 24.0,
+                        "YOrigo": 24.0,
+                        "ZOrigo": 1000.0,
+                        "CameraDistance": 1000.0
                       }
                     ]
                   },
@@ -842,7 +850,6 @@
                     "Name": "stalledContainer",
                     "Width": 320,
                     "Height": 55,
-                    "Visible": false,
                     "Components": [
                       {
                         "Type": "TextArea",
@@ -859,13 +866,21 @@
                         }
                       },
                       {
-                        "Type": "Image",
-                        "Name": "statusStalled",
+                        "Type": "TextureMapper",
+                        "Name": "statusStalledTexture",
                         "X": 261,
                         "Y": 3,
                         "Width": 48,
                         "Height": 48,
-                        "RelativeFilename": "failure_48x48.png"
+                        "RenderingAlgorithm": "Bilinear Interpolation",
+                        "FileNameImage": "failure_48x48.png",
+                        "LockBitmapToCenter": true,
+                        "Scale": 1.0,
+                        "LockOrigoToCenter": true,
+                        "XOrigo": 24.0,
+                        "YOrigo": 24.0,
+                        "ZOrigo": 1000.0,
+                        "CameraDistance": 1000.0
                       }
                     ]
                   },
@@ -891,13 +906,21 @@
                         }
                       },
                       {
-                        "Type": "Image",
-                        "Name": "statusEmpty",
+                        "Type": "TextureMapper",
+                        "Name": "statusEmptyTexture",
                         "X": 261,
                         "Y": 3,
                         "Width": 48,
                         "Height": 48,
-                        "RelativeFilename": "warning_48x48.png"
+                        "RenderingAlgorithm": "Bilinear Interpolation",
+                        "FileNameImage": "warning_48x48.png",
+                        "LockBitmapToCenter": true,
+                        "Scale": 1.0,
+                        "LockOrigoToCenter": true,
+                        "XOrigo": 24.0,
+                        "YOrigo": 24.0,
+                        "ZOrigo": 1000.0,
+                        "CameraDistance": 1000.0
                       }
                     ]
                   },
@@ -923,13 +946,21 @@
                         }
                       },
                       {
-                        "Type": "Image",
-                        "Name": "statusReady",
+                        "Type": "TextureMapper",
+                        "Name": "statusReadyTexture",
                         "X": 261,
                         "Y": 3,
                         "Width": 48,
                         "Height": 48,
-                        "RelativeFilename": "ready_48x48.png"
+                        "RenderingAlgorithm": "Bilinear Interpolation",
+                        "FileNameImage": "ready_48x48.png",
+                        "LockBitmapToCenter": true,
+                        "Scale": 1.0,
+                        "LockOrigoToCenter": true,
+                        "XOrigo": 24.0,
+                        "YOrigo": 24.0,
+                        "ZOrigo": 1000.0,
+                        "CameraDistance": 1000.0
                       }
                     ]
                   }
@@ -942,7 +973,6 @@
             "Name": "headerContainer",
             "Width": 320,
             "Height": 240,
-            "Visible": false,
             "Components": [
               {
                 "Type": "Line",
@@ -983,6 +1013,7 @@
             "Name": "startupContainer",
             "Width": 320,
             "Height": 240,
+            "Visible": false,
             "Components": [
               {
                 "Type": "Image",
