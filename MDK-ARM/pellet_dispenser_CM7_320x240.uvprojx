@@ -1937,6 +1937,11 @@
               <FilePath>../cm7/touchgfx/generated/fonts/src/font_tcmi_____ttf_20_4bpp_0.cpp</FilePath>
             </File>
             <File>
+              <FileName>Font_TCMI_____TTF_23_4bpp_0.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../cm7/touchgfx/generated/fonts/src/font_tcmi_____ttf_23_4bpp_0.cpp</FilePath>
+            </File>
+            <File>
               <FileName>Font_TCMI_____TTF_26_4bpp_0.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../cm7/touchgfx/generated/fonts/src/font_tcmi_____ttf_26_4bpp_0.cpp</FilePath>
@@ -1997,6 +2002,11 @@
               <FilePath>../cm7/touchgfx/generated/images/src/image_button_pressed_50x30.cpp</FilePath>
             </File>
             <File>
+              <FileName>image_button_pressed_chev_right_320x42.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../cm7/touchgfx/generated/images/src/image_button_pressed_chev_right_320x42.cpp</FilePath>
+            </File>
+            <File>
               <FileName>image_button_released_110x50.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../cm7/touchgfx/generated/images/src/image_button_released_110x50.cpp</FilePath>
@@ -2010,6 +2020,11 @@
               <FileName>image_button_released_50x30.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../cm7/touchgfx/generated/images/src/image_button_released_50x30.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>image_button_released_chev_right_320x42.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../cm7/touchgfx/generated/images/src/image_button_released_chev_right_320x42.cpp</FilePath>
             </File>
             <File>
               <FileName>image_chevron_down_released_40px.cpp</FileName>
@@ -2032,9 +2047,24 @@
               <FilePath>../cm7/touchgfx/generated/images/src/image_chevron_right_pressed_40px.cpp</FilePath>
             </File>
             <File>
+              <FileName>image_chevron_right_released_32px.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../cm7/touchgfx/generated/images/src/image_chevron_right_released_32px.cpp</FilePath>
+            </File>
+            <File>
               <FileName>image_chevron_right_released_40px.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../cm7/touchgfx/generated/images/src/image_chevron_right_released_40px.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>image_circle_green_24x24.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../cm7/touchgfx/generated/images/src/image_circle_green_24x24.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>image_circle_red_24x24.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../cm7/touchgfx/generated/images/src/image_circle_red_24x24.cpp</FilePath>
             </File>
             <File>
               <FileName>image_failure_48x48.cpp</FileName>
@@ -2127,6 +2157,11 @@
               <FilePath>../cm7/touchgfx/generated/images/src/image_settings_released_36px.cpp</FilePath>
             </File>
             <File>
+              <FileName>image_slidemenu_bg_320x155.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../cm7/touchgfx/generated/images/src/image_slidemenu_bg_320x155.cpp</FilePath>
+            </File>
+            <File>
               <FileName>image_slider_background.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../cm7/touchgfx/generated/images/src/image_slider_background.cpp</FilePath>
@@ -2187,6 +2222,11 @@
               <FilePath>../cm7/touchgfx/generated/fonts/src/kerning_tcmi_____ttf_20_4bpp.cpp</FilePath>
             </File>
             <File>
+              <FileName>Kerning_TCMI_____TTF_23_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../cm7/touchgfx/generated/fonts/src/kerning_tcmi_____ttf_23_4bpp.cpp</FilePath>
+            </File>
+            <File>
               <FileName>Kerning_TCMI_____TTF_26_4bpp.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../cm7/touchgfx/generated/fonts/src/kerning_tcmi_____ttf_26_4bpp.cpp</FilePath>
@@ -2240,6 +2280,11 @@
               <FileName>Table_TCMI_____TTF_20_4bpp.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../cm7/touchgfx/generated/fonts/src/table_tcmi_____ttf_20_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_TCMI_____TTF_23_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../cm7/touchgfx/generated/fonts/src/table_tcmi_____ttf_23_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>Table_TCMI_____TTF_26_4bpp.cpp</FileName>
@@ -4002,6 +4047,11 @@
               <FilePath>../cm7/touchgfx/generated/fonts/src/font_tcmi_____ttf_20_4bpp_0.cpp</FilePath>
             </File>
             <File>
+              <FileName>Font_TCMI_____TTF_23_4bpp_0.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../cm7/touchgfx/generated/fonts/src/font_tcmi_____ttf_23_4bpp_0.cpp</FilePath>
+            </File>
+            <File>
               <FileName>Font_TCMI_____TTF_26_4bpp_0.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../cm7/touchgfx/generated/fonts/src/font_tcmi_____ttf_26_4bpp_0.cpp</FilePath>
@@ -4062,6 +4112,11 @@
               <FilePath>../cm7/touchgfx/generated/images/src/image_button_pressed_50x30.cpp</FilePath>
             </File>
             <File>
+              <FileName>image_button_pressed_chev_right_320x42.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../cm7/touchgfx/generated/images/src/image_button_pressed_chev_right_320x42.cpp</FilePath>
+            </File>
+            <File>
               <FileName>image_button_released_110x50.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../cm7/touchgfx/generated/images/src/image_button_released_110x50.cpp</FilePath>
@@ -4075,6 +4130,11 @@
               <FileName>image_button_released_50x30.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../cm7/touchgfx/generated/images/src/image_button_released_50x30.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>image_button_released_chev_right_320x42.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../cm7/touchgfx/generated/images/src/image_button_released_chev_right_320x42.cpp</FilePath>
             </File>
             <File>
               <FileName>image_chevron_down_released_40px.cpp</FileName>
@@ -4097,9 +4157,24 @@
               <FilePath>../cm7/touchgfx/generated/images/src/image_chevron_right_pressed_40px.cpp</FilePath>
             </File>
             <File>
+              <FileName>image_chevron_right_released_32px.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../cm7/touchgfx/generated/images/src/image_chevron_right_released_32px.cpp</FilePath>
+            </File>
+            <File>
               <FileName>image_chevron_right_released_40px.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../cm7/touchgfx/generated/images/src/image_chevron_right_released_40px.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>image_circle_green_24x24.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../cm7/touchgfx/generated/images/src/image_circle_green_24x24.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>image_circle_red_24x24.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../cm7/touchgfx/generated/images/src/image_circle_red_24x24.cpp</FilePath>
             </File>
             <File>
               <FileName>image_failure_48x48.cpp</FileName>
@@ -4192,6 +4267,11 @@
               <FilePath>../cm7/touchgfx/generated/images/src/image_settings_released_36px.cpp</FilePath>
             </File>
             <File>
+              <FileName>image_slidemenu_bg_320x155.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../cm7/touchgfx/generated/images/src/image_slidemenu_bg_320x155.cpp</FilePath>
+            </File>
+            <File>
               <FileName>image_slider_background.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../cm7/touchgfx/generated/images/src/image_slider_background.cpp</FilePath>
@@ -4252,6 +4332,11 @@
               <FilePath>../cm7/touchgfx/generated/fonts/src/kerning_tcmi_____ttf_20_4bpp.cpp</FilePath>
             </File>
             <File>
+              <FileName>Kerning_TCMI_____TTF_23_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../cm7/touchgfx/generated/fonts/src/kerning_tcmi_____ttf_23_4bpp.cpp</FilePath>
+            </File>
+            <File>
               <FileName>Kerning_TCMI_____TTF_26_4bpp.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../cm7/touchgfx/generated/fonts/src/kerning_tcmi_____ttf_26_4bpp.cpp</FilePath>
@@ -4305,6 +4390,11 @@
               <FileName>Table_TCMI_____TTF_20_4bpp.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../cm7/touchgfx/generated/fonts/src/table_tcmi_____ttf_20_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_TCMI_____TTF_23_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../cm7/touchgfx/generated/fonts/src/table_tcmi_____ttf_23_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>Table_TCMI_____TTF_26_4bpp.cpp</FileName>

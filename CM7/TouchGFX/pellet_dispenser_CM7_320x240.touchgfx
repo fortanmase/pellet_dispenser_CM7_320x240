@@ -92,6 +92,7 @@
                 "Name": "dispenserSettingsContainer",
                 "Width": 320,
                 "Height": 240,
+                "Visible": false,
                 "Components": [
                   {
                     "Type": "TextArea",
@@ -286,7 +287,7 @@
                     "Type": "Button",
                     "Name": "testSoundButton",
                     "X": 260,
-                    "Y": 170,
+                    "Y": 196,
                     "Width": 50,
                     "Height": 30,
                     "Pressed": "button_pressed_50x30.png",
@@ -296,7 +297,7 @@
                     "Type": "TextArea",
                     "Name": "testSoundText",
                     "X": 5,
-                    "Y": 170,
+                    "Y": 196,
                     "Width": 104,
                     "Height": 31,
                     "TextId": "__SingleUse_NJZQ",
@@ -308,61 +309,10 @@
                     "AutoSize": true
                   },
                   {
-                    "Type": "Box",
-                    "Name": "tempBox",
-                    "X": 153,
-                    "Y": 133,
-                    "Width": 157,
-                    "Height": 25,
-                    "Color": {
-                      "Red": 245,
-                      "Green": 245,
-                      "Blue": 245
-                    }
-                  },
-                  {
-                    "Type": "Image",
-                    "Name": "tempChevImg",
-                    "X": 270,
-                    "Y": 125,
-                    "Width": 40,
-                    "Height": 40,
-                    "RelativeFilename": "chevron_down_released_40px.png"
-                  },
-                  {
-                    "Type": "TextArea",
-                    "Name": "tempTextArea",
-                    "X": 170,
-                    "Y": 134,
-                    "Width": 100,
-                    "Height": 22,
-                    "TextId": "__SingleUse_YSS6",
-                    "TextRotation": "0",
-                    "Color": {
-                      "Green": 73,
-                      "Blue": 144
-                    }
-                  },
-                  {
-                    "Type": "TextArea",
-                    "Name": "enableAlertsText",
-                    "X": 5,
-                    "Y": 130,
-                    "Width": 130,
-                    "Height": 31,
-                    "TextId": "__SingleUse_IDP2",
-                    "TextRotation": "0",
-                    "Color": {
-                      "Green": 73,
-                      "Blue": 144
-                    },
-                    "AutoSize": true
-                  },
-                  {
                     "Type": "ToggleButton",
                     "Name": "muteButton",
                     "X": 260,
-                    "Y": 91,
+                    "Y": 146,
                     "Width": 50,
                     "Height": 30,
                     "Pressed": "toggle_button_on_50x30.png",
@@ -372,7 +322,7 @@
                     "Type": "TextArea",
                     "Name": "muteText",
                     "X": 5,
-                    "Y": 90,
+                    "Y": 146,
                     "Width": 49,
                     "Height": 31,
                     "TextId": "__SingleUse_Q08R",
@@ -386,8 +336,8 @@
                   {
                     "Type": "Slider",
                     "Name": "volumeSlider",
-                    "X": 131,
-                    "Y": 52,
+                    "X": 132,
+                    "Y": 96,
                     "Width": 188,
                     "Height": 28,
                     "IsHorizontalSlider": true,
@@ -404,10 +354,169 @@
                     "Type": "TextArea",
                     "Name": "volumeText",
                     "X": 5,
-                    "Y": 50,
+                    "Y": 96,
                     "Width": 72,
                     "Height": 31,
                     "TextId": "__SingleUse_RFA7",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Green": 73,
+                      "Blue": 144
+                    },
+                    "AutoSize": true
+                  },
+                  {
+                    "Type": "SlideMenu",
+                    "Name": "alertSlideMenu",
+                    "Y": 81,
+                    "Width": 320,
+                    "Height": 155,
+                    "FileNameBackground": "slidemenu_bg_320x155.png",
+                    "FileNameButtonPressed": "",
+                    "FileNameButtonReleased": "",
+                    "State": "Collapsed",
+                    "ExpandDirection": "South",
+                    "Easing": "Cubic",
+                    "EasingOption": "InOut",
+                    "AnimationDuration": 300,
+                    "ExpandedStateTimeout": 10000,
+                    "Components": [
+                      {
+                        "Type": "ToggleButton",
+                        "Name": "toggleButtonServiceAlarm",
+                        "X": 260,
+                        "Y": 110,
+                        "Width": 50,
+                        "Height": 30,
+                        "Pressed": "toggle_button_on_50x30.png",
+                        "Released": "toggle_button_off_50x30.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textDispenserServiceAlarm",
+                        "X": 6,
+                        "Y": 110,
+                        "Width": 155,
+                        "Height": 27,
+                        "TextId": "__SingleUse_6ODS",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Green": 73,
+                          "Blue": 144
+                        },
+                        "AutoSize": true
+                      },
+                      {
+                        "Type": "ToggleButton",
+                        "Name": "toggleButtonStalledAlarm_1",
+                        "X": 260,
+                        "Y": 75,
+                        "Width": 50,
+                        "Height": 30,
+                        "Pressed": "toggle_button_on_50x30.png",
+                        "Released": "toggle_button_off_50x30.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textDispenserStalledAlarm",
+                        "X": 5,
+                        "Y": 75,
+                        "Width": 153,
+                        "Height": 27,
+                        "TextId": "__SingleUse_V0UE",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Green": 73,
+                          "Blue": 144
+                        },
+                        "AutoSize": true
+                      },
+                      {
+                        "Type": "ToggleButton",
+                        "Name": "toggleButtonEmptyAlarm_1",
+                        "X": 260,
+                        "Y": 40,
+                        "Width": 50,
+                        "Height": 30,
+                        "Pressed": "toggle_button_on_50x30.png",
+                        "Released": "toggle_button_off_50x30.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textDispenserEmptyAlarm",
+                        "X": 5,
+                        "Y": 40,
+                        "Width": 144,
+                        "Height": 27,
+                        "TextId": "__SingleUse_IBTW",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Green": 73,
+                          "Blue": 144
+                        },
+                        "AutoSize": true
+                      },
+                      {
+                        "Type": "ToggleButton",
+                        "Name": "toggleButtonClockAlarm_1",
+                        "X": 260,
+                        "Y": 5,
+                        "Width": 50,
+                        "Height": 30,
+                        "Pressed": "toggle_button_on_50x30.png",
+                        "Released": "toggle_button_off_50x30.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textClockAlarm",
+                        "X": 5,
+                        "Y": 5,
+                        "Width": 110,
+                        "Height": 27,
+                        "TextId": "__SingleUse_Y5C6",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Green": 73,
+                          "Blue": 144
+                        },
+                        "AutoSize": true
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "buttonEnableAlerts",
+                    "Y": 40,
+                    "Width": 320,
+                    "Height": 42,
+                    "Pressed": "button_pressed_320x42.png",
+                    "Released": "button_released_320x42.png"
+                  },
+                  {
+                    "Type": "TextureMapper",
+                    "Name": "textureAlertsButton",
+                    "X": 280,
+                    "Y": 41,
+                    "Width": 40,
+                    "Height": 40,
+                    "RenderingAlgorithm": "Bilinear Interpolation",
+                    "FileNameImage": "chevron_right_released_40px.png",
+                    "LockBitmapToCenter": true,
+                    "Scale": 1.0,
+                    "LockOrigoToCenter": true,
+                    "XOrigo": 20.0,
+                    "YOrigo": 20.0,
+                    "ZOrigo": 1000.0,
+                    "CameraDistance": 1000.0
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "enableAlertsText",
+                    "X": 5,
+                    "Y": 46,
+                    "Width": 130,
+                    "Height": 31,
+                    "TextId": "__SingleUse_IDP2",
                     "TextRotation": "0",
                     "Color": {
                       "Green": 73,
@@ -436,7 +545,6 @@
                 "Y": 2,
                 "Width": 320,
                 "Height": 238,
-                "Visible": false,
                 "Components": [
                   {
                     "Type": "Button",
@@ -453,10 +561,10 @@
                     "Name": "screenToutIncButton",
                     "X": 283,
                     "Y": 168,
-                    "Width": 40,
-                    "Height": 40,
-                    "Pressed": "chevron_right_pressed_40px.png",
-                    "Released": "chevron_right_released_40px.png"
+                    "Width": 32,
+                    "Height": 32,
+                    "Pressed": "chevron_right_released_32px.png",
+                    "Released": "chevron_right_released_32px.png"
                   },
                   {
                     "Type": "TextArea",
@@ -595,6 +703,21 @@
                 "Visible": false,
                 "Components": [
                   {
+                    "Type": "ButtonWithIcon",
+                    "Name": "dispenserSettingsButton",
+                    "Y": 124,
+                    "Width": 320,
+                    "Height": 42,
+                    "Pressed": "button_pressed_chev_right_320x42.png",
+                    "Released": "button_released_chev_right_320x42.png",
+                    "IconPressed": "pellets3_pressed_32x32.png",
+                    "IconReleased": "pellets3_released_32x32.png",
+                    "IconX": 5,
+                    "IconY": 5,
+                    "IconHeight": 32,
+                    "IconWidth": 32
+                  },
+                  {
                     "Type": "TextArea",
                     "Name": "dispenserSettingsText",
                     "X": 70,
@@ -611,14 +734,14 @@
                   },
                   {
                     "Type": "ButtonWithIcon",
-                    "Name": "dispenserSettingsButton",
-                    "Y": 124,
+                    "Name": "soundSettingsButton",
+                    "Y": 82,
                     "Width": 320,
                     "Height": 42,
-                    "Pressed": "button_pressed_320x42.png",
-                    "Released": "button_released_320x42.png",
-                    "IconPressed": "pellets3_pressed_32x32.png",
-                    "IconReleased": "pellets3_released_32x32.png",
+                    "Pressed": "button_pressed_chev_right_320x42.png",
+                    "Released": "button_released_chev_right_320x42.png",
+                    "IconPressed": "sound_pressed_32x32.png",
+                    "IconReleased": "sound_released_32x32.png",
                     "IconX": 5,
                     "IconY": 5,
                     "IconHeight": 32,
@@ -641,14 +764,14 @@
                   },
                   {
                     "Type": "ButtonWithIcon",
-                    "Name": "soundSettingsButton",
-                    "Y": 82,
+                    "Name": "displaySettingsButton",
+                    "Y": 40,
                     "Width": 320,
                     "Height": 42,
-                    "Pressed": "button_pressed_320x42.png",
-                    "Released": "button_released_320x42.png",
-                    "IconPressed": "sound_pressed_32x32.png",
-                    "IconReleased": "sound_released_32x32.png",
+                    "Pressed": "button_pressed_chev_right_320x42.png",
+                    "Released": "button_released_chev_right_320x42.png",
+                    "IconPressed": "brightness_pressed_32x32.png",
+                    "IconReleased": "brightness_released_32x32.png",
                     "IconX": 5,
                     "IconY": 5,
                     "IconHeight": 32,
@@ -668,21 +791,6 @@
                       "Blue": 144
                     },
                     "AutoSize": true
-                  },
-                  {
-                    "Type": "ButtonWithIcon",
-                    "Name": "displaySettingsButton",
-                    "Y": 40,
-                    "Width": 320,
-                    "Height": 42,
-                    "Pressed": "button_pressed_320x42.png",
-                    "Released": "button_released_320x42.png",
-                    "IconPressed": "brightness_pressed_32x32.png",
-                    "IconReleased": "brightness_released_32x32.png",
-                    "IconX": 5,
-                    "IconY": 5,
-                    "IconHeight": 32,
-                    "IconWidth": 32
                   },
                   {
                     "Type": "TextArea",
@@ -738,6 +846,22 @@
                 "IconX": 30,
                 "IconHeight": 50,
                 "IconWidth": 50
+              },
+              {
+                "Type": "Circle",
+                "Name": "circleAutoDispenseStatus",
+                "X": 95,
+                "Y": 181,
+                "Width": 20,
+                "Height": 20,
+                "Color": {
+                  "Red": 255
+                },
+                "CenterX": 10.0,
+                "CenterY": 10.0,
+                "Radius": 8.0,
+                "EndAngle": 360.0,
+                "CapPrecision": "Butt"
               },
               {
                 "Type": "Button",
@@ -807,7 +931,6 @@
                     "Name": "dispensingContainer",
                     "Width": 320,
                     "Height": 55,
-                    "Visible": false,
                     "Components": [
                       {
                         "Type": "TextArea",
@@ -850,6 +973,7 @@
                     "Name": "stalledContainer",
                     "Width": 320,
                     "Height": 55,
+                    "Visible": false,
                     "Components": [
                       {
                         "Type": "TextArea",
@@ -1201,6 +1325,39 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "incPelletSpeed"
+            }
+          },
+          {
+            "InteractionName": "alertSlideMenuTriggered",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonEnableAlerts"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "alertSlideMenuTriggered"
+            }
+          },
+          {
+            "InteractionName": "autoDispenseButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "autoDispenseButton"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "autoDispenseButtonPressed"
+            }
+          },
+          {
+            "InteractionName": "manualDispenseButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "manualDispenseButton"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "manualDispenseButtonPressed"
             }
           }
         ]

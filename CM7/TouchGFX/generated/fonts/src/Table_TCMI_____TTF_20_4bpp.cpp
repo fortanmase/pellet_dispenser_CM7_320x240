@@ -4,16 +4,7 @@
 
 FONT_TABLE_LOCATION_FLASH_PRAGMA
 KEEP extern const touchgfx::GlyphNode glyphs_TCMI_____TTF_20_4bpp[] FONT_TABLE_LOCATION_FLASH_ATTRIBUTE = {
-    {     0, 0x0020,   0,   0,   0,   0,   6,   0,   0, 0x00 }, // space
-    {     0, 0x002E,   4,   3,   3,   0,   4,   0,   1, 0x00 }, // period
-    {     6, 0x003F,   7,  12,  12,   1,   9,   0,   0, 0x00 }, // question
-    {    54, 0x0041,  12,  13,  13,   0,  12,   0,   0, 0x00 }, // A
-    {   132, 0x0053,  10,  12,  12,   0,  10,   0,   0, 0x00 }, // S
-    {   192, 0x0063,   8,   8,   8,   0,   8,   0,   0, 0x00 }, // c
-    {   224, 0x0065,   9,   8,   8,   0,   9,   0,   0, 0x00 }, // e
-    {   264, 0x006C,   5,  13,  13,   0,   4,   0,   0, 0x00 }, // l
-    {   303, 0x0072,   7,   8,   8,   0,   7,   0,   0, 0x00 }, // r
-    {   335, 0x0074,   5,  12,  12,   1,   5,   0,   0, 0x00 }  // t
+    {     0, 0x003F,   7,  12,  12,   1,   9,   0,   0, 0x00 } // question
 };
 
 // TCMI_____TTF_20_4bpp
@@ -31,6 +22,6 @@ touchgfx::GeneratedFont& getFont_TCMI_____TTF_20_4bpp();
 
 touchgfx::GeneratedFont& getFont_TCMI_____TTF_20_4bpp()
 {
-    static touchgfx::GeneratedFont TCMI_____TTF_20_4bpp(glyphs_TCMI_____TTF_20_4bpp, 10, 20, 20, 0, 0, 4, 1, 0, 1, unicodes_TCMI_____TTF_20_4bpp, kerning_TCMI_____TTF_20_4bpp, 63, 0, 0, 0);
+    static touchgfx::GeneratedFont TCMI_____TTF_20_4bpp(glyphs_TCMI_____TTF_20_4bpp, 1, 20, 20, 0, 0, 4, 1, 0, 0, unicodes_TCMI_____TTF_20_4bpp, kerning_TCMI_____TTF_20_4bpp, 63, 0, 0, 0);
     return TCMI_____TTF_20_4bpp;
 }

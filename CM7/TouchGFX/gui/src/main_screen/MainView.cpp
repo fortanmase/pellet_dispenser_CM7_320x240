@@ -21,6 +21,9 @@ static uint16_t pelletQuantity = 100U;
 static uint8_t pelletInterval = 5U;
 static float pelletSpeed = 1.5F;
 
+static bool dispenseTrigger = false;
+static bool autoDispenseTrigger = false;
+
 MainView::MainView()
 {
     headerContainer.setVisible(false);
@@ -37,20 +40,31 @@ void MainView::tearDownScreen()
     MainViewBase::tearDownScreen();
 }
 
+static uint32_t lastResetTime = 0;
+
 void MainView::handleTickEvent()
 {
-    if (displaySettingsButton.getPressedState())
+    if (dispenseTrigger)
     {
-        displaySettingsText.invalidate();
+        dispenseTrigger = false;
+        set_dispense_trigger();
     }
+
+    if (autoDispenseTrigger)
+    {
+        uint32_t currentTime = HAL_GetTick();
+        if (currentTime - lastResetTime >= 3000U)
+        {
+            dispenseTrigger = true;
+            reset_dispense_trigger();
+            lastResetTime = currentTime;
+        }
+    }
+
+    updateAlertSlideMenu();
     if (screenState == MAIN_SCREEN)
     {
-        // static float zAngle = 0.0F;
-        // zAngle += 0.100F;
-        // dispenseInProgressTexture.updateAngles(0.0F, 0.0F, zAngle);
-
-        /*---------------------------*/
-
+        updateTextureZAngle(dispenseInProgressTexture, 0.100F);
         updateTextureScale(statusReadyTexture);
         updateTextureScale(statusStalledTexture);
         updateTextureScale(statusEmptyTexture);
@@ -209,6 +223,18 @@ void MainView::homeButtonPressed()
     screenState = MAIN_SCREEN;
 }
 
+void MainView::autoDispenseButtonPressed()
+{
+    autoDispenseTrigger ^= true;
+    circleAutoDispenseStatusPainter.setColor(autoDispenseTrigger ? touchgfx::Color::getColorFromRGB(0, 255, 0) : touchgfx::Color::getColorFromRGB(255, 0, 0));
+}
+
+void MainView::manualDispenseButtonPressed()
+{
+    dispenseTrigger = true;
+    reset_dispense_trigger();
+}
+
 void MainView::decScreenTimeout()
 {
     if (screenTimeoutValue > 0)
@@ -355,4 +381,62 @@ void MainView::updateTextureScale(TextureMapper &texture)
 
     scaleData.textureScale += scaleData.textureScaleFactor;
     texture.updateScale(scaleData.textureScale);
+}
+
+void MainView::alertSlideMenuTriggered()
+{
+    if (alertSlideMenu.getState() == SlideMenu::COLLAPSED)
+    {
+        alertSlideMenu.animateToState(SlideMenu::EXPANDED);
+        transitionTrigger = true;
+    }
+    else
+    {
+        alertSlideMenu.animateToState(SlideMenu::COLLAPSED);
+        transitionTrigger = false;
+    }
+}
+
+void MainView::updateAlertSlideMenu()
+{
+    if (alertSlideMenu.getState() == SlideMenu::EXPANDED)
+    {
+        if (alertSlideMenu.getExpandedStateTimer() == alertSlideMenu.getExpandedStateTimeout())
+        {
+            transitionTrigger = false; /* Reset transition trigger after timeout */
+        }
+    }
+
+    static float updateAngle = 0.0F;
+    const float incAngle = 0.1309F;
+
+    if (transitionTrigger && updateAngle < 1.5708F)
+    {
+        updateAngle += incAngle;
+        if (updateAngle > 1.5708F)
+        {
+            updateAngle = 1.5708F;
+        }
+        textureAlertsButton.updateAngles(0.0F, 0.0F, updateAngle);
+    }
+    else if (!transitionTrigger && updateAngle > 0.0F)
+    {
+        updateAngle -= incAngle;
+        if (updateAngle < 0.0F)
+        {
+            updateAngle = 0.0F;
+        }
+        textureAlertsButton.updateAngles(0.0F, 0.0F, updateAngle);
+    }
+}
+
+void MainView::updateTextureZAngle(TextureMapper &texture, float increment)
+{
+    float &zAngle = textureZAngle[&texture];
+    zAngle += increment;
+    if (zAngle >= 2.0F * M_PI)
+    {
+        zAngle -= 2.0F * M_PI;
+    }
+    texture.updateAngles(0.0F, 0.0F, zAngle);
 }

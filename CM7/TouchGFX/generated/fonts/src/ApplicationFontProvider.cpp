@@ -33,6 +33,9 @@ touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId typography)
     case Typography::SETTINGSTYPOSMALL:
         // TCMI_____TTF_20_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[7]);
+    case Typography::SETTINGSTYPOMEDIUM:
+        // TCMI_____TTF_23_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[8]);
     default:
         return 0;
     }

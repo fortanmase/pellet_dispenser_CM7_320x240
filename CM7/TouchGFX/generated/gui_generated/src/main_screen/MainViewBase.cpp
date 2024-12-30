@@ -54,6 +54,7 @@ MainViewBase::MainViewBase() :
     functionContainer.add(infoContainer);
 
     dispenserSettingsContainer.setPosition(0, 0, 320, 240);
+    dispenserSettingsContainer.setVisible(false);
     pelSpeedValue.setXY(214, 160);
     pelSpeedValue.setColor(touchgfx::Color::getColorFromRGB(0, 73, 144));
     pelSpeedValue.setLinespacing(0);
@@ -139,58 +140,114 @@ MainViewBase::MainViewBase() :
 
     soundSettingsContainer.setPosition(0, 0, 320, 240);
     soundSettingsContainer.setVisible(false);
-    testSoundButton.setXY(260, 170);
+    testSoundButton.setXY(260, 196);
     testSoundButton.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_RELEASED_50X30_ID), touchgfx::Bitmap(BITMAP_BUTTON_PRESSED_50X30_ID));
     soundSettingsContainer.add(testSoundButton);
 
-    testSoundText.setXY(5, 170);
+    testSoundText.setXY(5, 196);
     testSoundText.setColor(touchgfx::Color::getColorFromRGB(0, 73, 144));
     testSoundText.setLinespacing(0);
     testSoundText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_NJZQ));
     soundSettingsContainer.add(testSoundText);
 
-    tempBox.setPosition(153, 133, 157, 25);
-    tempBox.setColor(touchgfx::Color::getColorFromRGB(245, 245, 245));
-    soundSettingsContainer.add(tempBox);
-
-    tempChevImg.setXY(270, 125);
-    tempChevImg.setBitmap(touchgfx::Bitmap(BITMAP_CHEVRON_DOWN_RELEASED_40PX_ID));
-    soundSettingsContainer.add(tempChevImg);
-
-    tempTextArea.setPosition(170, 134, 100, 22);
-    tempTextArea.setColor(touchgfx::Color::getColorFromRGB(0, 73, 144));
-    tempTextArea.setLinespacing(0);
-    tempTextArea.setTypedText(touchgfx::TypedText(T___SINGLEUSE_YSS6));
-    soundSettingsContainer.add(tempTextArea);
-
-    enableAlertsText.setXY(5, 130);
-    enableAlertsText.setColor(touchgfx::Color::getColorFromRGB(0, 73, 144));
-    enableAlertsText.setLinespacing(0);
-    enableAlertsText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_IDP2));
-    soundSettingsContainer.add(enableAlertsText);
-
-    muteButton.setXY(260, 91);
+    muteButton.setXY(260, 146);
     muteButton.setBitmaps(touchgfx::Bitmap(BITMAP_TOGGLE_BUTTON_OFF_50X30_ID), touchgfx::Bitmap(BITMAP_TOGGLE_BUTTON_ON_50X30_ID));
     soundSettingsContainer.add(muteButton);
 
-    muteText.setXY(5, 90);
+    muteText.setXY(5, 146);
     muteText.setColor(touchgfx::Color::getColorFromRGB(0, 73, 144));
     muteText.setLinespacing(0);
     muteText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Q08R));
     soundSettingsContainer.add(muteText);
 
-    volumeSlider.setXY(131, 52);
+    volumeSlider.setXY(132, 96);
     volumeSlider.setBitmaps(touchgfx::Bitmap(BITMAP_SLIDER_BACKGROUND_ID), touchgfx::Bitmap(BITMAP_SLIDER_FILL_ID), touchgfx::Bitmap(BITMAP_SLIDER_INDICATOR_ID));
     volumeSlider.setupHorizontalSlider(16, 11, 0, 0, 160);
     volumeSlider.setValueRange(0, 100);
     volumeSlider.setValue(50);
     soundSettingsContainer.add(volumeSlider);
 
-    volumeText.setXY(5, 50);
+    volumeText.setXY(5, 96);
     volumeText.setColor(touchgfx::Color::getColorFromRGB(0, 73, 144));
     volumeText.setLinespacing(0);
     volumeText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_RFA7));
     soundSettingsContainer.add(volumeText);
+
+    alertSlideMenu.setXY(0, 81);
+    alertSlideMenu.setup(touchgfx::SlideMenu::SOUTH,
+        touchgfx::Bitmap(BITMAP_SLIDEMENU_BG_320X155_ID),
+        0, 0);
+    alertSlideMenu.setState(touchgfx::SlideMenu::COLLAPSED);
+    alertSlideMenu.setVisiblePixelsWhenCollapsed(0);
+    alertSlideMenu.setHiddenPixelsWhenExpanded(0);
+    alertSlideMenu.setAnimationEasingEquation(touchgfx::EasingEquations::cubicEaseInOut);
+    alertSlideMenu.setAnimationDuration(18);
+    alertSlideMenu.setExpandedStateTimeout(600);
+    toggleButtonServiceAlarm.setXY(260, 110);
+    toggleButtonServiceAlarm.setBitmaps(touchgfx::Bitmap(BITMAP_TOGGLE_BUTTON_OFF_50X30_ID), touchgfx::Bitmap(BITMAP_TOGGLE_BUTTON_ON_50X30_ID));
+    alertSlideMenu.add(toggleButtonServiceAlarm);
+
+    textDispenserServiceAlarm.setXY(6, 110);
+    textDispenserServiceAlarm.setColor(touchgfx::Color::getColorFromRGB(0, 73, 144));
+    textDispenserServiceAlarm.setLinespacing(0);
+    textDispenserServiceAlarm.setTypedText(touchgfx::TypedText(T___SINGLEUSE_6ODS));
+    alertSlideMenu.add(textDispenserServiceAlarm);
+
+    toggleButtonStalledAlarm_1.setXY(260, 75);
+    toggleButtonStalledAlarm_1.setBitmaps(touchgfx::Bitmap(BITMAP_TOGGLE_BUTTON_OFF_50X30_ID), touchgfx::Bitmap(BITMAP_TOGGLE_BUTTON_ON_50X30_ID));
+    alertSlideMenu.add(toggleButtonStalledAlarm_1);
+
+    textDispenserStalledAlarm.setXY(5, 75);
+    textDispenserStalledAlarm.setColor(touchgfx::Color::getColorFromRGB(0, 73, 144));
+    textDispenserStalledAlarm.setLinespacing(0);
+    textDispenserStalledAlarm.setTypedText(touchgfx::TypedText(T___SINGLEUSE_V0UE));
+    alertSlideMenu.add(textDispenserStalledAlarm);
+
+    toggleButtonEmptyAlarm_1.setXY(260, 40);
+    toggleButtonEmptyAlarm_1.setBitmaps(touchgfx::Bitmap(BITMAP_TOGGLE_BUTTON_OFF_50X30_ID), touchgfx::Bitmap(BITMAP_TOGGLE_BUTTON_ON_50X30_ID));
+    alertSlideMenu.add(toggleButtonEmptyAlarm_1);
+
+    textDispenserEmptyAlarm.setXY(5, 40);
+    textDispenserEmptyAlarm.setColor(touchgfx::Color::getColorFromRGB(0, 73, 144));
+    textDispenserEmptyAlarm.setLinespacing(0);
+    textDispenserEmptyAlarm.setTypedText(touchgfx::TypedText(T___SINGLEUSE_IBTW));
+    alertSlideMenu.add(textDispenserEmptyAlarm);
+
+    toggleButtonClockAlarm_1.setXY(260, 5);
+    toggleButtonClockAlarm_1.setBitmaps(touchgfx::Bitmap(BITMAP_TOGGLE_BUTTON_OFF_50X30_ID), touchgfx::Bitmap(BITMAP_TOGGLE_BUTTON_ON_50X30_ID));
+    alertSlideMenu.add(toggleButtonClockAlarm_1);
+
+    textClockAlarm.setXY(5, 5);
+    textClockAlarm.setColor(touchgfx::Color::getColorFromRGB(0, 73, 144));
+    textClockAlarm.setLinespacing(0);
+    textClockAlarm.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Y5C6));
+    alertSlideMenu.add(textClockAlarm);
+
+    soundSettingsContainer.add(alertSlideMenu);
+
+    buttonEnableAlerts.setXY(0, 40);
+    buttonEnableAlerts.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_RELEASED_320X42_ID), touchgfx::Bitmap(BITMAP_BUTTON_PRESSED_320X42_ID));
+    buttonEnableAlerts.setAction(buttonCallback);
+    soundSettingsContainer.add(buttonEnableAlerts);
+
+    textureAlertsButton.setXY(280, 41);
+    textureAlertsButton.setBitmap(touchgfx::Bitmap(BITMAP_CHEVRON_RIGHT_RELEASED_40PX_ID));
+    textureAlertsButton.setWidth(40);
+    textureAlertsButton.setHeight(40);
+    textureAlertsButton.setBitmapPosition(0.0f, 0.0f);
+    textureAlertsButton.setScale(1.0f);
+    textureAlertsButton.setCameraDistance(1000.0f);
+    textureAlertsButton.setOrigo(20.0f, 20.0f, 1000.0f);
+    textureAlertsButton.setCamera(20.0f, 20.0f);
+    textureAlertsButton.setAngles(0.0f, 0.0f, 0.0f);
+    textureAlertsButton.setRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
+    soundSettingsContainer.add(textureAlertsButton);
+
+    enableAlertsText.setXY(5, 46);
+    enableAlertsText.setColor(touchgfx::Color::getColorFromRGB(0, 73, 144));
+    enableAlertsText.setLinespacing(0);
+    enableAlertsText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_IDP2));
+    soundSettingsContainer.add(enableAlertsText);
 
     soundHeaderText.setPosition(125, 0, 71, 36);
     soundHeaderText.setColor(touchgfx::Color::getColorFromRGB(0, 73, 144));
@@ -201,14 +258,13 @@ MainViewBase::MainViewBase() :
     functionContainer.add(soundSettingsContainer);
 
     displaySettingsContainer.setPosition(0, 2, 320, 238);
-    displaySettingsContainer.setVisible(false);
     screenToutDecButton.setXY(160, 168);
     screenToutDecButton.setBitmaps(touchgfx::Bitmap(BITMAP_CHEVRON_LEFT_RELEASED_40PX_ID), touchgfx::Bitmap(BITMAP_CHEVRON_LEFT_PRESSED_40PX_ID));
     screenToutDecButton.setAction(buttonCallback);
     displaySettingsContainer.add(screenToutDecButton);
 
     screenToutIncButton.setXY(283, 168);
-    screenToutIncButton.setBitmaps(touchgfx::Bitmap(BITMAP_CHEVRON_RIGHT_RELEASED_40PX_ID), touchgfx::Bitmap(BITMAP_CHEVRON_RIGHT_PRESSED_40PX_ID));
+    screenToutIncButton.setBitmaps(touchgfx::Bitmap(BITMAP_CHEVRON_RIGHT_RELEASED_32PX_ID), touchgfx::Bitmap(BITMAP_CHEVRON_RIGHT_RELEASED_32PX_ID));
     screenToutIncButton.setAction(buttonCallback);
     displaySettingsContainer.add(screenToutIncButton);
 
@@ -271,17 +327,23 @@ MainViewBase::MainViewBase() :
 
     settingsContainer.setPosition(0, 0, 320, 240);
     settingsContainer.setVisible(false);
+    dispenserSettingsButton.setXY(0, 124);
+    dispenserSettingsButton.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_RELEASED_CHEV_RIGHT_320X42_ID), touchgfx::Bitmap(BITMAP_BUTTON_PRESSED_CHEV_RIGHT_320X42_ID), touchgfx::Bitmap(BITMAP_PELLETS3_RELEASED_32X32_ID), touchgfx::Bitmap(BITMAP_PELLETS3_PRESSED_32X32_ID));
+    dispenserSettingsButton.setIconXY(5, 5);
+    dispenserSettingsButton.setAction(buttonCallback);
+    settingsContainer.add(dispenserSettingsButton);
+
     dispenserSettingsText.setXY(70, 128);
     dispenserSettingsText.setColor(touchgfx::Color::getColorFromRGB(0, 73, 144));
     dispenserSettingsText.setLinespacing(0);
     dispenserSettingsText.setTypedText(touchgfx::TypedText(T_DISPENSSETTID));
     settingsContainer.add(dispenserSettingsText);
 
-    dispenserSettingsButton.setXY(0, 124);
-    dispenserSettingsButton.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_RELEASED_320X42_ID), touchgfx::Bitmap(BITMAP_BUTTON_PRESSED_320X42_ID), touchgfx::Bitmap(BITMAP_PELLETS3_RELEASED_32X32_ID), touchgfx::Bitmap(BITMAP_PELLETS3_PRESSED_32X32_ID));
-    dispenserSettingsButton.setIconXY(5, 5);
-    dispenserSettingsButton.setAction(buttonCallback);
-    settingsContainer.add(dispenserSettingsButton);
+    soundSettingsButton.setXY(0, 82);
+    soundSettingsButton.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_RELEASED_CHEV_RIGHT_320X42_ID), touchgfx::Bitmap(BITMAP_BUTTON_PRESSED_CHEV_RIGHT_320X42_ID), touchgfx::Bitmap(BITMAP_SOUND_RELEASED_32X32_ID), touchgfx::Bitmap(BITMAP_SOUND_PRESSED_32X32_ID));
+    soundSettingsButton.setIconXY(5, 5);
+    soundSettingsButton.setAction(buttonCallback);
+    settingsContainer.add(soundSettingsButton);
 
     soundSettingsText.setXY(87, 86);
     soundSettingsText.setColor(touchgfx::Color::getColorFromRGB(0, 73, 144));
@@ -289,23 +351,17 @@ MainViewBase::MainViewBase() :
     soundSettingsText.setTypedText(touchgfx::TypedText(T_SOUNDSETTID));
     settingsContainer.add(soundSettingsText);
 
-    soundSettingsButton.setXY(0, 82);
-    soundSettingsButton.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_RELEASED_320X42_ID), touchgfx::Bitmap(BITMAP_BUTTON_PRESSED_320X42_ID), touchgfx::Bitmap(BITMAP_SOUND_RELEASED_32X32_ID), touchgfx::Bitmap(BITMAP_SOUND_PRESSED_32X32_ID));
-    soundSettingsButton.setIconXY(5, 5);
-    soundSettingsButton.setAction(buttonCallback);
-    settingsContainer.add(soundSettingsButton);
+    displaySettingsButton.setXY(0, 40);
+    displaySettingsButton.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_RELEASED_CHEV_RIGHT_320X42_ID), touchgfx::Bitmap(BITMAP_BUTTON_PRESSED_CHEV_RIGHT_320X42_ID), touchgfx::Bitmap(BITMAP_BRIGHTNESS_RELEASED_32X32_ID), touchgfx::Bitmap(BITMAP_BRIGHTNESS_PRESSED_32X32_ID));
+    displaySettingsButton.setIconXY(5, 5);
+    displaySettingsButton.setAction(buttonCallback);
+    settingsContainer.add(displaySettingsButton);
 
     displaySettingsText.setXY(81, 44);
     displaySettingsText.setColor(touchgfx::Color::getColorFromRGB(0, 73, 144));
     displaySettingsText.setLinespacing(0);
     displaySettingsText.setTypedText(touchgfx::TypedText(T_DISPSETTID));
     settingsContainer.add(displaySettingsText);
-
-    displaySettingsButton.setXY(0, 40);
-    displaySettingsButton.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_RELEASED_320X42_ID), touchgfx::Bitmap(BITMAP_BUTTON_PRESSED_320X42_ID), touchgfx::Bitmap(BITMAP_BRIGHTNESS_RELEASED_32X32_ID), touchgfx::Bitmap(BITMAP_BRIGHTNESS_PRESSED_32X32_ID));
-    displaySettingsButton.setIconXY(5, 5);
-    displaySettingsButton.setAction(buttonCallback);
-    settingsContainer.add(displaySettingsButton);
 
     settingsHeaderText.setXY(118, 0);
     settingsHeaderText.setColor(touchgfx::Color::getColorFromRGB(0, 73, 144));
@@ -321,12 +377,23 @@ MainViewBase::MainViewBase() :
     manualDispenseButton.setXY(195, 179);
     manualDispenseButton.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_RELEASED_110X50_ID), touchgfx::Bitmap(BITMAP_BUTTON_PRESSED_110X50_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_PAN_TOOL_45_45_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_PAN_TOOL_45_45_E8F6FB_SVG_ID));
     manualDispenseButton.setIconXY(30, 1);
+    manualDispenseButton.setAction(buttonCallback);
     mainContainer.add(manualDispenseButton);
 
     autoDispenseButton.setXY(15, 179);
     autoDispenseButton.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_RELEASED_110X50_ID), touchgfx::Bitmap(BITMAP_BUTTON_PRESSED_110X50_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_AUTORENEW_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_AUTORENEW_50_50_E8F6FB_SVG_ID));
     autoDispenseButton.setIconXY(30, 0);
+    autoDispenseButton.setAction(buttonCallback);
     mainContainer.add(autoDispenseButton);
+
+    circleAutoDispenseStatus.setPosition(95, 181, 20, 20);
+    circleAutoDispenseStatus.setCenter(10, 10);
+    circleAutoDispenseStatus.setRadius(8);
+    circleAutoDispenseStatus.setLineWidth(0);
+    circleAutoDispenseStatus.setArc(0, 360);
+    circleAutoDispenseStatusPainter.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+    circleAutoDispenseStatus.setPainter(circleAutoDispenseStatusPainter);
+    mainContainer.add(circleAutoDispenseStatus);
 
     settingsButton.setXY(2, 2);
     settingsButton.setBitmaps(touchgfx::Bitmap(BITMAP_SETTINGS_RELEASED_36PX_ID), touchgfx::Bitmap(BITMAP_SETTINGS_PRESSED_36PX_ID));
@@ -354,7 +421,6 @@ MainViewBase::MainViewBase() :
     statusContainer.add(dispensedContainer);
 
     dispensingContainer.setPosition(0, 0, 320, 55);
-    dispensingContainer.setVisible(false);
     dispenserDispensing.setPosition(5, 11, 255, 33);
     dispenserDispensing.setColor(touchgfx::Color::getColorFromRGB(0, 73, 144));
     dispenserDispensing.setLinespacing(0);
@@ -378,6 +444,7 @@ MainViewBase::MainViewBase() :
     statusContainer.add(dispensingContainer);
 
     stalledContainer.setPosition(0, 0, 320, 55);
+    stalledContainer.setVisible(false);
     dispenserStalledText.setPosition(5, 11, 182, 33);
     dispenserStalledText.setColor(touchgfx::Color::getColorFromRGB(0, 73, 144));
     dispenserStalledText.setLinespacing(0);
@@ -601,5 +668,26 @@ void MainViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //When pelSpeedIncButton clicked call virtual function
         //Call incPelletSpeed
         incPelletSpeed();
+    }
+    if (&src == &buttonEnableAlerts)
+    {
+        //alertSlideMenuTriggered
+        //When buttonEnableAlerts clicked call virtual function
+        //Call alertSlideMenuTriggered
+        alertSlideMenuTriggered();
+    }
+    if (&src == &autoDispenseButton)
+    {
+        //autoDispenseButtonPressed
+        //When autoDispenseButton clicked call virtual function
+        //Call autoDispenseButtonPressed
+        autoDispenseButtonPressed();
+    }
+    if (&src == &manualDispenseButton)
+    {
+        //manualDispenseButtonPressed
+        //When manualDispenseButton clicked call virtual function
+        //Call manualDispenseButtonPressed
+        manualDispenseButtonPressed();
     }
 }

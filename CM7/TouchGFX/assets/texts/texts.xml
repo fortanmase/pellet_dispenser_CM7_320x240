@@ -6,6 +6,18 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_6ODS" Alignment="Left" TypographyId="settingsTypoMedium">
+        <Translation Language="GB">Dispenser Service</Translation>
+      </Text>
+      <Text Id="__SingleUse_V0UE" Alignment="Left" TypographyId="settingsTypoMedium">
+        <Translation Language="GB">Dispenser Stalled</Translation>
+      </Text>
+      <Text Id="__SingleUse_Y5C6" Alignment="Left" TypographyId="settingsTypoMedium">
+        <Translation Language="GB">Clock Alarm</Translation>
+      </Text>
+      <Text Id="__SingleUse_IBTW" Alignment="Left" TypographyId="settingsTypoMedium">
+        <Translation Language="GB">Dispenser Empty</Translation>
+      </Text>
       <Text Id="__SingleUse_HK8T" Alignment="Left" TypographyId="settingsTypo">
         <Translation Language="GB">1.5</Translation>
       </Text>
@@ -29,9 +41,6 @@
       </Text>
       <Text Id="__SingleUse_0J8R" Alignment="Left" TypographyId="settingsTypo">
         <Translation Language="GB">Speed</Translation>
-      </Text>
-      <Text Id="__SingleUse_YSS6" Alignment="Left" TypographyId="settingsTypoSmall">
-        <Translation Language="GB">Select Alert...</Translation>
       </Text>
       <Text Id="screenTimeout" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">100</Translation>
@@ -137,5 +146,6 @@
     <Typography Id="mainTypo" Font="TCBI____.TTF" Size="28" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
     <Typography Id="settingsTypo" Font="TCMI____.TTF" Size="26" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
     <Typography Id="settingsTypoSmall" Font="TCMI____.TTF" Size="20" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="settingsTypoMedium" Font="TCMI____.TTF" Size="23" Bpp="4" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>

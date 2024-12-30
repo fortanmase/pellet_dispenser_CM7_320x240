@@ -13,14 +13,16 @@
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/containers/ScrollableContainer.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
-#include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/containers/Slider.hpp>
-#include <touchgfx/widgets/ButtonWithIcon.hpp>
+#include <touchgfx/containers/SlideMenu.hpp>
 #include <touchgfx/widgets/TextureMapper.hpp>
-#include <touchgfx/widgets/canvas/Line.hpp>
+#include <touchgfx/widgets/ButtonWithIcon.hpp>
+#include <touchgfx/widgets/canvas/Circle.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
+#include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/containers/clock/DigitalClock.hpp>
+#include <touchgfx/widgets/Image.hpp>
 
 class MainViewBase : public touchgfx::View<MainPresenter>
 {
@@ -96,6 +98,18 @@ public:
     {
         // Override and implement this function in Main
     }
+    virtual void alertSlideMenuTriggered()
+    {
+        // Override and implement this function in Main
+    }
+    virtual void autoDispenseButtonPressed()
+    {
+        // Override and implement this function in Main
+    }
+    virtual void manualDispenseButtonPressed()
+    {
+        // Override and implement this function in Main
+    }
 
 protected:
     FrontendApplication& application() {
@@ -131,14 +145,22 @@ protected:
     touchgfx::Container soundSettingsContainer;
     touchgfx::Button testSoundButton;
     touchgfx::TextArea testSoundText;
-    touchgfx::Box tempBox;
-    touchgfx::Image tempChevImg;
-    touchgfx::TextArea tempTextArea;
-    touchgfx::TextArea enableAlertsText;
     touchgfx::ToggleButton muteButton;
     touchgfx::TextArea muteText;
     touchgfx::Slider volumeSlider;
     touchgfx::TextArea volumeText;
+    touchgfx::SlideMenu alertSlideMenu;
+    touchgfx::ToggleButton toggleButtonServiceAlarm;
+    touchgfx::TextArea textDispenserServiceAlarm;
+    touchgfx::ToggleButton toggleButtonStalledAlarm_1;
+    touchgfx::TextArea textDispenserStalledAlarm;
+    touchgfx::ToggleButton toggleButtonEmptyAlarm_1;
+    touchgfx::TextArea textDispenserEmptyAlarm;
+    touchgfx::ToggleButton toggleButtonClockAlarm_1;
+    touchgfx::TextArea textClockAlarm;
+    touchgfx::Button buttonEnableAlerts;
+    touchgfx::TextureMapper textureAlertsButton;
+    touchgfx::TextArea enableAlertsText;
     touchgfx::TextArea soundHeaderText;
     touchgfx::Container displaySettingsContainer;
     touchgfx::Button screenToutDecButton;
@@ -153,16 +175,18 @@ protected:
     touchgfx::TextArea brightnessText;
     touchgfx::TextArea displayHeaderText;
     touchgfx::Container settingsContainer;
-    touchgfx::TextArea dispenserSettingsText;
     touchgfx::ButtonWithIcon dispenserSettingsButton;
-    touchgfx::TextArea soundSettingsText;
+    touchgfx::TextArea dispenserSettingsText;
     touchgfx::ButtonWithIcon soundSettingsButton;
-    touchgfx::TextArea displaySettingsText;
+    touchgfx::TextArea soundSettingsText;
     touchgfx::ButtonWithIcon displaySettingsButton;
+    touchgfx::TextArea displaySettingsText;
     touchgfx::TextArea settingsHeaderText;
     touchgfx::Container mainContainer;
     touchgfx::ButtonWithIcon manualDispenseButton;
     touchgfx::ButtonWithIcon autoDispenseButton;
+    touchgfx::Circle circleAutoDispenseStatus;
+    touchgfx::PainterRGB565 circleAutoDispenseStatusPainter;
     touchgfx::Button settingsButton;
     touchgfx::Button infoButton;
     touchgfx::Container statusContainer;

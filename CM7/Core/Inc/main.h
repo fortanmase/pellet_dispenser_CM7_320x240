@@ -23,36 +23,40 @@
 #define __MAIN_H
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32h7xx_hal.h"
 
-/* Private includes ----------------------------------------------------------*/
-/* USER CODE BEGIN Includes */
+  /* Private includes ----------------------------------------------------------*/
+  /* USER CODE BEGIN Includes */
 
-/* USER CODE END Includes */
+  /* USER CODE END Includes */
 
-/* Exported types ------------------------------------------------------------*/
-/* USER CODE BEGIN ET */
+  /* Exported types ------------------------------------------------------------*/
+  /* USER CODE BEGIN ET */
 
-/* USER CODE END ET */
+  /* USER CODE END ET */
 
-/* Exported constants --------------------------------------------------------*/
-/* USER CODE BEGIN EC */
+  /* Exported constants --------------------------------------------------------*/
+  /* USER CODE BEGIN EC */
 
-/* USER CODE END EC */
+  /* USER CODE END EC */
 
-/* Exported macro ------------------------------------------------------------*/
-/* USER CODE BEGIN EM */
+  /* Exported macro ------------------------------------------------------------*/
+  /* USER CODE BEGIN EM */
 
-/* USER CODE END EM */
+  /* USER CODE END EM */
 
-/* Exported functions prototypes ---------------------------------------------*/
-void Error_Handler(void);
+  /* Exported functions prototypes ---------------------------------------------*/
+  void Error_Handler(void);
 
-/* USER CODE BEGIN EFP */
+  /* USER CODE BEGIN EFP */
+
+  void set_dispense_trigger(void);
+  void reset_dispense_trigger(void);
 
   /**
    * @brief Initializes the Data Watchpoint and Trace (DWT) unit
@@ -93,6 +97,8 @@ void Error_Handler(void);
 #define STLINK_TX_GPIO_Port GPIOD
 #define USB_OTG_FS_PWR_EN_Pin GPIO_PIN_10
 #define USB_OTG_FS_PWR_EN_GPIO_Port GPIOD
+#define DISPENSE_TRIG_Pin GPIO_PIN_6
+#define DISPENSE_TRIG_GPIO_Port GPIOG
 #define USB_OTG_FS_OVCR_Pin GPIO_PIN_7
 #define USB_OTG_FS_OVCR_GPIO_Port GPIOG
 #define USB_OTG_FS_OVCR_EXTI_IRQn EXTI9_5_IRQn
@@ -112,9 +118,9 @@ void Error_Handler(void);
 #define LED_YELLOW_Pin GPIO_PIN_1
 #define LED_YELLOW_GPIO_Port GPIOE
 
-/* USER CODE BEGIN Private defines */
+  /* USER CODE BEGIN Private defines */
 
-/* USER CODE END Private defines */
+  /* USER CODE END Private defines */
 
 #ifdef __cplusplus
 }
