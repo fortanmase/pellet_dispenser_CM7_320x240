@@ -2057,16 +2057,6 @@
               <FilePath>../cm7/touchgfx/generated/images/src/image_chevron_right_released_40px.cpp</FilePath>
             </File>
             <File>
-              <FileName>image_circle_green_24x24.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../cm7/touchgfx/generated/images/src/image_circle_green_24x24.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>image_circle_red_24x24.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../cm7/touchgfx/generated/images/src/image_circle_red_24x24.cpp</FilePath>
-            </File>
-            <File>
               <FileName>image_failure_48x48.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../cm7/touchgfx/generated/images/src/image_failure_48x48.cpp</FilePath>
@@ -4165,16 +4155,6 @@
               <FileName>image_chevron_right_released_40px.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../cm7/touchgfx/generated/images/src/image_chevron_right_released_40px.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>image_circle_green_24x24.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../cm7/touchgfx/generated/images/src/image_circle_green_24x24.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>image_circle_red_24x24.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../cm7/touchgfx/generated/images/src/image_circle_red_24x24.cpp</FilePath>
             </File>
             <File>
               <FileName>image_failure_48x48.cpp</FileName>
